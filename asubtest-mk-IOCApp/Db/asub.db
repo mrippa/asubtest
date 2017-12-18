@@ -1,0 +1,22 @@
+record(aSub,"my_asub_record") {
+    #field(SCAN,"Passive")
+    #field(PINI, "YES")
+    #field(PHAS,"0")
+    #field(EVNT,"0")
+    #field(DISV,"1")
+    #field(PREC,"0")
+    field(LFLG,"IGNORE")
+    field(EFLG,"ALWAYS")
+    field(SDIS,"0.0000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(SUBL,"")
+    field(BRSV,"NO_ALARM")
+    field(INAM,"init_my_asub")
+    field(SNAM,"my_asub")
+    field(FTA, "LONG")
+    field(NOA, "3")
+    field(A, "3 42 5 8")
+    field(FTVA, "LONG")
+}
+
