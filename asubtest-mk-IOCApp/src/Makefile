@@ -32,6 +32,7 @@ asubtest-mk-IOC_DBD += slalib.dbd
 #asubtest-mk-IOC_DBD += timeProbe.dbd 
 #asubtest-mk-IOC_DBD += listAlarmRecords.dbd
 asubtest-mk-IOC_DBD += menuScan.dbd 
+asubtest-mk-IOC_DBD += initTrace.dbd 
 asubtest-mk-IOC_DBD += asubtest.dbd 
 
 # Include dbd files from all support modules:
@@ -62,7 +63,7 @@ asubtest-mk-IOC_SRCS += getTime.c
 asubtest-mk-IOC_SRCS += simRoutines.c
 asubtest-mk-IOC_SRCS += tcsRandom.c
 asubtest-mk-IOC_SRCS += tcsServo.c
-#asubtest-mk-IOC_SRCS += test.c
+asubtest-mk-IOC_SRCS += initTrace.c
 #asubtest-mk-IOC_SRCS += testFollow.c
 #asubtest-mk-IOC_SRCS += testLan.c
 #asubtest-mk-IOC_SRCS += trajectory.c

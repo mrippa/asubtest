@@ -34,7 +34,7 @@ dbLoadRecords("db/testFollow_aSub.db", "top=mc1:")
 #var mySubDebug 1
 
 ## Run this to trace the stages of iocInit
-#traceIocInit
+traceIocInit
 
 iocInit
 
