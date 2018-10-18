@@ -9,7 +9,8 @@ cd /gem_sw/test/mrippa/asubtest/
 #zoneset("HST10")
 epicsEnvSet("ENGINEER","Matt Rippa")
 epicsEnvSet("LOCATION","HBF")
-epicsEnvSet("IOCSH_PS1","asubtest-mk-IOC> ")
+epicsEnvSet("EPICS_CA_ADDR_LIST","10.1.2.173")
+epicsEnvSet("IOCSH_PS1","asubtest-mk-sim4> ")
 ## You may have to change example to something else
 ## everywhere it appears in this file
 
@@ -24,11 +25,9 @@ bc635TimeSetTpPrio (-1)
 #BCconfigure (0, 0, 200, 1, 0)
 
 ## Load record instances
-#dbLoadTemplate("db/user.substitutions")
-#dbLoadRecords("db/dbSubExample.db", "user=mrippa")
-dbLoadRecords("db/iocAdminRTEMS.db", "IOC=mrippa:iocStats")
-#dbLoadRecords("db/testFollow_aSub.db", "top=mc1:")
-dbLoadRecords("db/asub.db")
+dbLoadTemplate("db/userHost4.substitutions")
+dbLoadRecords("db/iocAdminRTEMS.db", "IOC=sim4:iocStats")
+#dbLoadRecords("db/asub.db")
 	
 ## Set this to see messages from mySub
 #var mySubDebug 1
@@ -38,7 +37,7 @@ dbLoadRecords("db/asub.db")
 ## Run this to trace the stages of iocInit
 #traceIocInit
 
-#iocInit
+iocInit
 
 ## Start any sequence programs
 #seq(sncxxx, "user=mrippa")

@@ -2980,22 +2980,51 @@ static long init_my_asub (aSubRecord *prec) {
     return 0;
 }
 
-static long my_asub(aSubRecord *prec) {
-    long i, *a;
+int mySubDebug = 0;
+static long my_asubtx(aSubRecord *prec) {
+    long  i, *ain, aout[10];
     long sum=0;
+    
+    ain = (long *)prec->a;
+    for (i=0; i<prec->noa; i++) {
+        sum += ain[i];
+        aout[i] = ain[i];
+
+        if(mySubDebug)
+            printf("sum: %ld\n", sum);
+    }
+
+    if(mySubDebug)
+        printf("Hello asubtx\n");
+    //*(long *) prec->val = sum;
+    memcpy (prec->vala, aout, prec->nova * sizeof(long));
+
+    return 0; /* process output links */
+}
+
+static long my_asubrx(aSubRecord *prec) {
+    long i, *a;
+    long  sum=0;
     
     a = (long *)prec->a;
     for (i=0; i<prec->noa; i++) {
         sum += a[i];
-        printf("sum: %ld\n", sum);
+
+        if(mySubDebug)
+            printf("sum: %ld\n", sum);
     }
 
-    *(long *) prec->vala = sum;
+    //*(long *) prec->val = sum;
+    memcpy (prec->vala, a, prec->noa * sizeof(long ));
+
     return 0; /* process output links */
 }
 
 /* -----------------------------------------------------------------*/
-epicsRegisterFunction(my_asub);
+epicsExportAddress(int, mySubDebug);
+
+epicsRegisterFunction(my_asubtx);
+epicsRegisterFunction(my_asubrx);
 epicsRegisterFunction(init_my_asub);
 epicsRegisterFunction(initFollowA);
 epicsRegisterFunction(FollowA);

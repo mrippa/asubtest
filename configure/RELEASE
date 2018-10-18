@@ -28,28 +28,36 @@
 #EPICS_RELEASE=R3.14.12.4
 #EPICS_RELEASE=R3.14.12.6
 #EPICS_RELEASE=R3.15.5
-EPICS_RELEASE=3.14.12.7
+EPICS_RELEASE=R3.14.12.7
 #
 PROD_SUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
 WORK_SUPP=/gem_sw/work/$(EPICS_RELEASE)/support
-TEST_SUPP=/home/mrippa/work/test/support
+#SUPPORT=$(WORK_SUPP)
+#TEST_SUPP=/home/mrippa/work/test/support
+
 #
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
-GEMREC=$(TEST_SUPP)/geminiRec
-SNCSEQ=$(TEST_SUPP)/seq
-IOCSTATS=$(TEST_SUPP)/iocStats
-BANCOMM=$(TEST_SUPP)/bancomm
-TIMELIB=$(TEST_SUPP)/timelib
-SLALIB=$(TEST_SUPP)/slalib
+#GEMREC=$(WORK_SUPP)/geminiRec
+#SNCSEQ=$(WORK_SUPP)/seq
+#SNCSEQ=$(PROD_SUPP)/seq/2-2-3-2
+#IOCSTATS=$(WORK_SUPP)/iocStats
+IOCSTATS=$(PROD_SUPP)/iocStats/3-1-15-1
+#BANCOMM=$(WORK_SUPP)/bancomm
+#BANCOMM=$(PROD_SUPP)/bancomm/1-6-8
+#TIMELIB=$(WORK_SUPP)/timelib/
+#TIMELIB=$(PROD_SUPP)/timelib
+#SLALIB=$(WORK_SUPP)/slalib
+#SLALIB=$(PROD_SUPP)/slalib/1-9-6
 
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:
 #RULES = $(MODULES)/build-rules
 
-EPICS_BASE = /home/mrippa/work/vendor/epics/$(EPICS_RELEASE)/base
+#EPICS_BASE = /home/mrippa/work/vendor/epics/$(EPICS_RELEASE)/base
+EPICS_BASE = /gem_sw/epics/$(EPICS_RELEASE)/base
 
 # These allow developers to override the RELEASE variable settings
 # without having to modify the configure/RELEASE file itself.

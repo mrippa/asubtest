@@ -13,9 +13,15 @@ vpath %.db $(SYS_DB_PATHS)
 # databases, templates, substitutions like this
 # DB += xxx.db
 #DB += time.db
-DB += testFollow_aSub.db
+#DB += testFollow_aSub.db
 DB += iocAdminRTEMS.db
-DB += asub.db
+DB += asub2.db
+DB += asub3.db
+DB += asub4.db
+DB += userHost2.substitutions
+DB += userHost3.substitutions
+DB += userHost4.substitutions
+DB += userHostlinux.substitutions
 
 include $(TOP)/configure/RULES
 #----------------------------------------
