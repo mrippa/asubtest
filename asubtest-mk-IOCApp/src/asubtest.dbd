@@ -16,6 +16,7 @@
 function(init_my_asub)
 function(my_asubrx)
 function(my_asubtx)
+function(tdiff_proc)
 #function(setAxisState)
 #function(trackingFO)
 #registrar(mcRegisterCaInitLogCommands)

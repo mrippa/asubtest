@@ -6,9 +6,9 @@ record(aSub,"$(user):asubtx") {
     field(FTVA, "LONG")
     field(NOA, "10")
     field(NOVA, "10")
-    field(INPA, "sim3:compressExample PP")
+    field(INPA, "sim3:compressExample NPP NMS")
     field(OUTA, "lnx:asubrx.A CPP")
-    #field(FLNK, "lnx:asubrx.PROC")
+    field(FLNK, "sim3:calc2.PROC")
 }
 
 record(aSub, "$(user):asubrx") {
@@ -20,6 +20,27 @@ record(aSub, "$(user):asubrx") {
     field(FTB, "LONG")
     field(NOB, "10")
     field(FTVB, "LONG")
+}
+
+#Count down to 0, then back to 9.
+record(calc, "$(user):calc2") {
+    field(DESC, "Counter")
+    field(SCAN,"Passive")
+    field(CALC, "(A>B)?(A-C):D")
+    field(INPA, "$(user):calc2.VAL  NPP NMS")
+    field(INPB, "0")
+    field(INPC, "1")
+    field(INPD, "9")
+    field(EGU, "Counts")
+    field(HOPR, "10")
+    field(HIHI, "8")
+    field(HIGH, "6")
+    field(LOW, "4")
+    field(LOLO, "2")
+    field(HHSV, "MAJOR")
+    field(HSV, "MINOR")
+    field(LSV, "MINOR")
+    field(LLSV, "MAJOR")
 }
 
 #Count to 9, then back to 0.
@@ -72,6 +93,7 @@ record(compress,"$(user):compressExample")
     field(NSAM,"10")
     field(HOPR,"10")
     field(EGU,"Counts")
+    field(FLNK,"sim3:asubtx.PROC")
 }
 
 

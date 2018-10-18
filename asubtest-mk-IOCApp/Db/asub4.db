@@ -20,6 +20,24 @@ record(aSub, "$(user):asubrx") {
     field(NOVA, "10")
     field(FTA, "LONG")
     field(FTVA, "LONG")
+    field(FTVD, "DOUBLE")
+    field(OUTC, "lnx:tdiff.A NPP")
+    field(OUTD, "lnx:tdiff.B CPP")
+}
+
+record(aSub, "$(user):tdiff") {
+    field(LFLG,"IGNORE")
+    field(EFLG,"ON CHANGE")
+    field(INAM,"")
+    field(SNAM,"tdiff_proc")
+    field(NOA, "1")
+    field(NOVA, "1")
+    field(NOB, "1")
+    field(NOVB, "1")
+    field(FTA, "DOUBLE")
+    field(FTVA, "DOUBLE")
+    field(FTB, "DOUBLE")
+    field(FTVB, "DOUBLE")
 }
 
 #Count to 9, then back to 0.
@@ -67,7 +85,7 @@ record(ai, "$(user):aiExample")
 record(compress,"$(user):compressExample")
 {
     field(DESC, "Circular buffer")
-    field(INP,"$(user):aiExample.VAL CP NMS")
+    field(INP,"$(user):asubrx.VALT PP NMS")
     field(ALG,"Circular Buffer")
     field(NSAM,"10")
     field(HOPR,"10")

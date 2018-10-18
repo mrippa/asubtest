@@ -68,13 +68,13 @@ asubtest-mk-IOC_SRCS += initTrace.c
 #asubtest-mk-IOC_SRCS += testFollow.c
 #asubtest-mk-IOC_SRCS += testLan.c
 #asubtest-mk-IOC_SRCS += trajectory.c
-#asubtest-mk-IOC_SRCS_RTEMS += rtems_config.c
+asubtest-mk-IOC_SRCS_RTEMS += rtems_config.c
 
 # asubtest-mk-IOC_registerRecordDeviceDriver.cpp derives from asubtest-mk-IOC.dbd
 asubtest-mk-IOC_SRCS += asubtest-mk-IOC_registerRecordDeviceDriver.cpp
 
 # Build the main IOC entry point on workstation OSs.
-asubtest-mk-IOC_SRCS_DEFAULT += asubtest-mk-IOCMain.cpp
+asubtest-mk-IOC_SRCS += asubtest-mk-IOCMain.cpp
 
 # Finally link to the EPICS Base libraries
 asubtest-mk-IOC_LIBS += $(EPICS_BASE_IOC_LIBS)
