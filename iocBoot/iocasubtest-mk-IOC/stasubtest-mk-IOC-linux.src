@@ -9,6 +9,7 @@ cd /gem_sw/test/mrippa/asubtest/
 #zoneset("HST10")
 epicsEnvSet("ENGINEER","Matt Rippa")
 epicsEnvSet("LOCATION","HBF")
+epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES","32768")
 epicsEnvSet("EPICS_CA_ADDR_LIST","10.1.2.173")
 epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST","NO")
 epicsEnvSet("IOCSH_PS1","asubtest-lnx> ")

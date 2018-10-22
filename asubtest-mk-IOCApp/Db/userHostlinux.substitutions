@@ -6,6 +6,6 @@
 #}
 
 file db/asub4.db {
-    pattern { user, no, scan }
-        { "lnx", 2, "Passive" }
+    pattern { user, nsamples, scan }
+        { "lnx", 800, "Passive" }
 }

@@ -6,7 +6,7 @@
 #}
 
 file db/asub3.db {
-    pattern { user, no, scan }
-        { "sim3", 1, "1 second" }
+    pattern { user, nsamples, scan }
+        { "sim3", 800, "1 second" }
 }
 

@@ -14,6 +14,7 @@
 #function(initFollowA2)
 #function(FollowA2)
 function(init_my_asub)
+function(init_asubrx)
 function(my_asubrx)
 function(my_asubtx)
 function(tdiff_proc)

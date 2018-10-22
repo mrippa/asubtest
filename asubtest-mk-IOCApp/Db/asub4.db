@@ -3,7 +3,7 @@ record(aSub,"$(user):asubtx") {
     field(EFLG,"ALWAYS")
     field(INAM,"init_my_asub")
     field(SNAM,"my_asubtx")
-    field(NOA, "10")
+    field(NOA, "4096")
     field(FTA, "LONG")
     field(FTVA, "LONG")
     field(OUTA, "sim3:asubrx CPP")
@@ -13,16 +13,16 @@ record(aSub,"$(user):asubtx") {
 record(aSub, "$(user):asubrx") {
     field(LFLG,"IGNORE")
     field(EFLG,"ALWAYS")
-    field(INAM,"init_my_asub")
+    field(INAM,"init_asubrx")
     field(SNAM,"my_asubrx")
     field(INPA, "sim3:asubtx.VALA CPP")
-    field(NOA, "10")
-    field(NOVA, "10")
+    field(NOA, "$(nsamples)")
+    field(NOVA, "$(nsamples)")
+    field(NOVB, "5")
     field(FTA, "LONG")
     field(FTVA, "LONG")
-    field(FTVD, "DOUBLE")
-    field(OUTC, "lnx:tdiff.A NPP")
-    field(OUTD, "lnx:tdiff.B CPP")
+    field(FTVB, "DOUBLE")
+    field(OUTB, "lnx:tdiff.A CPP")
 }
 
 record(aSub, "$(user):tdiff") {
@@ -30,14 +30,10 @@ record(aSub, "$(user):tdiff") {
     field(EFLG,"ON CHANGE")
     field(INAM,"")
     field(SNAM,"tdiff_proc")
-    field(NOA, "1")
-    field(NOVA, "1")
-    field(NOB, "1")
-    field(NOVB, "1")
+    field(NOA, "5")
+    field(NOVA, "5")
     field(FTA, "DOUBLE")
     field(FTVA, "DOUBLE")
-    field(FTB, "DOUBLE")
-    field(FTVB, "DOUBLE")
 }
 
 #Count to 9, then back to 0.
