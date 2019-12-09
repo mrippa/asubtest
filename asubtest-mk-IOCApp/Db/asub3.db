@@ -1,3 +1,7 @@
+record(genSub, "$(user):mytime") {
+
+    field(SNAM,"getTime")
+}
 record(aSub,"$(user):asubtx") {
     field(EFLG,"ALWAYS")
     field(INAM,"init_my_asub")
@@ -6,9 +10,9 @@ record(aSub,"$(user):asubtx") {
     field(FTVA, "LONG")
     field(NOA, "$(nsamples)")
     field(NOVA, "$(nsamples)")
-    field(INPA, "sim3:compressExample NPP NMS")
-    field(OUTA, "lnx:asubrx.A CPP")
-    field(FLNK, "sim3:calc2.PROC")
+    field(INPA, "$(user):compressExample NPP NMS")
+    field(OUTA, "sim4:followA.J CPP")
+    field(FLNK, "$(user):calc2.PROC")
 }
 
 record(aSub, "$(user):asubrx") {
@@ -50,7 +54,7 @@ record(calc, "$(user):calc") {
     field(FLNK, "$(user):aiExample")
     field(CALC, "(A<B)?(A+C):D")
     field(INPA, "$(user):calc.VAL  NPP NMS")
-    field(INPB, "4095")
+    field(INPB, "2000")
     field(INPC, "1")
     field(INPD, "0")
     field(EGU, "Counts")
@@ -90,10 +94,10 @@ record(compress,"$(user):compressExample")
     field(DESC, "Circular buffer")
     field(INP,"$(user):aiExample.VAL CP NMS")
     field(ALG,"Circular Buffer")
-    field(NSAM,"4096")
+    field(NSAM,"2000")
     field(HOPR,"10")
     field(EGU,"Counts")
-    field(FLNK,"sim3:asubtx.PROC")
+    field(FLNK,"tcs:asubtx.PROC")
 }
 
 

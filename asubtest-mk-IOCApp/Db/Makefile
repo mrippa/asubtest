@@ -21,6 +21,8 @@ DB += asub4.db
 DB += userHost2.substitutions
 DB += userHost3.substitutions
 DB += userHost4.substitutions
+DB += tcs.substitutions
+DB += mcs.substitutions
 DB += userHostlinux.substitutions
 
 include $(TOP)/configure/RULES

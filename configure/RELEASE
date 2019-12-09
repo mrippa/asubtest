@@ -33,23 +33,28 @@ EPICS_RELEASE=R3.14.12.7
 PROD_SUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
 WORK_SUPP=/gem_sw/work/$(EPICS_RELEASE)/support
 #SUPPORT=$(WORK_SUPP)
-#TEST_SUPP=/home/mrippa/work/test/support
+TEST_SUPP=/home/mrippa/work/test/support
 
 #
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
-#GEMREC=$(WORK_SUPP)/geminiRec
+GEMREC=$(TEST_SUPP)/geminiRec
+SNCSEQ=$(TEST_SUPP)/seq
 #SNCSEQ=$(WORK_SUPP)/seq
 #SNCSEQ=$(PROD_SUPP)/seq/2-2-3-2
 #IOCSTATS=$(WORK_SUPP)/iocStats
-IOCSTATS=$(PROD_SUPP)/iocStats/3-1-15-1
+IOCSTATS=$(TEST_SUPP)/iocStats
+#IOCSTATS=$(PROD_SUPP)/iocStats/3-1-15-1
 #BANCOMM=$(WORK_SUPP)/bancomm
+BANCOMM=$(TEST_SUPP)/bancomm
 #BANCOMM=$(PROD_SUPP)/bancomm/1-6-8
 #TIMELIB=$(WORK_SUPP)/timelib/
+TIMELIB=$(TEST_SUPP)/timelib/
 #TIMELIB=$(PROD_SUPP)/timelib
 #SLALIB=$(WORK_SUPP)/slalib
+SLALIB=$(TEST_SUPP)/slalib
 #SLALIB=$(PROD_SUPP)/slalib/1-9-6
 
 # Set RULES here if you want to use build rules from somewhere

@@ -7,9 +7,11 @@
 #include <math.h>
 #include <time.h>
 #include <epicsPrint.h>
+#include <genSubRecord.h>
+#include <timeLib.h>
 
 #include <aSubRecord.h>
-#define NSAMPLES 200
+#define NSAMPLES 2000
 
 static epicsFloat64 tdiff[NSAMPLES];
 static epicsInt32 init_my_asub (aSubRecord *prec) {
@@ -117,6 +119,12 @@ static epicsInt32 tdiff_proc(aSubRecord *prec) {
     return 0; /* process output links */
 }
 
+long getTime( struct genSubRecord *pgsub )
+{
+  timePrint("TAI");
+  return(0);
+}
+epicsRegisterFunction(getTime);
 
 
 /* -----------------------------------------------------------------*/

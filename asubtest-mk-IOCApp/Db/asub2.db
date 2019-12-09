@@ -15,7 +15,7 @@ record(aSub,"$(user):asubtx") {
     field(OUTA, "sim3:asubrx CPP")
 }
 
-record(aSub, "$(user):asubrx") {
+record(genSub, "$(user):asubrx") {
     field(INAM,"init_my_asub")
     field(SNAM,"my_asubrx")
     field(FTA, "LONG")
